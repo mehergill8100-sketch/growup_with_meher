@@ -1,57 +1,104 @@
-/* General Styles */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #000;
-  color: #fff;
-  text-align: center;
+/* Global & layout */
+:root{
+  --bg:#000;
+  --card:#0f0f0f;
+  --accent:#25D366;
+  --muted:#bdbdbd;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:20px;
 }
 
-/* Profile */
-.profile-container {
-  padding: 20px;
+/* Header */
+.site-header{
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  padding:14px 0;
 }
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #fff;
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  justify-content:space-between;
 }
+.logo-img{
+  width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.08)
+}
+.brand h1{margin:0;font-size:20px}
+.sub{margin:3px 0;color:var(--muted);font-size:13px}
+.top-cta .btn{font-size:14px}
 
-/* Video Section */
-.video-section video {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border: 2px solid #fff;
-  border-radius: 10px;
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 6px 18px rgba(37,211,102,0.08);
+  transition:transform .18s ease, box-shadow .18s;
 }
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.btn.invest{background:#ff5a5f}
 
-/* Description */
-.description {
-  margin: 20px;
-  font-size: 18px;
-  line-height: 1.6;
-}
+/* Hero / video */
+.hero{padding:28px 0 10px}
+.video-wrap{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.video-wrap video{width:100%;height:420px;max-height:70vh;border-radius:10px;object-fit:cover;background:#000}
 
-/* WhatsApp Floating Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+/* small CTA under video */
+.video-cta{margin-top:12px;display:flex;gap:12px;justify-content:center;align-items:center}
+.lead{margin-top:18px;font-size:18px;color:var(--muted);line-height:1.6}
+
+/* Trust / reviews */
+.trust{margin:28px 0}
+.trust-grid{display:flex;gap:12px;justify-content:center}
+.trust-card{background:var(--card);padding:16px;border-radius:10px;min-width:180px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,0.6)}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.review{background:#0b0b0b;padding:14px;border-radius:10px}
+
+/* Contact section */
+.contact{margin:28px 0}
+.contact-form{display:flex;flex-direction:column;gap:10px;align-items:center;padding:18px;background:linear-gradient(180deg,#070707,#0b0b0b);border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.contact-form input,.contact-form textarea{
+  width:100%;max-width:700px;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:#111;color:var(--white)
 }
-.whatsapp-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
+.contact-form button{width:220px}
+
+/* final-cta */
+.final-cta{margin:28px 0;padding:22px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));text-align:center}
 
 /* Footer */
-footer {
-  margin-top: 30px;
-  padding: 15px;
-  background: #111;
-  font-size: 14px;
+.site-footer{margin-top:30px;padding:18px 0;background:#050505;border-top:1px solid rgba(255,255,255,0.02)}
+.site-footer a{color:var(--muted);text-decoration:none;margin-right:12px}
+
+/* Floating whatsapp */
+.whatsapp-floating{position:fixed;right:18px;bottom:18px;z-index:1200;opacity:0;transform:translateY(20px);transition:all .4s}
+.whatsapp-floating.visible{opacity:1;transform:translateY(0)}
+.whatsapp-floating img{width:64px;height:64px;border-radius:50%;box-shadow:0 10px 30px rgba(0,0,0,0.5);border:3px solid rgba(0,0,0,0.2)}
+
+/* helpers */
+.pulse{animation:pulseAnim 1.8s ease-in-out infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes pulseAnim{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+
+/* Responsive */
+@media (max-width:800px){
+  .header-inner{flex-direction:column;gap:8px;text-align:center}
+  .video-wrap video{height:240px}
+  .logo-img{width:110px;height:110px}
+  .contact-form input,.contact-form textarea{max-width:100%}
 }
