@@ -1,44 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Growup with Meher</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Profile Section -->
-  <header>
-    <div class="profile-container">
-      <img src="assets/profile.jpg" alt="Profile" class="profile-img">
-      <h1>Growup with Meher</h1>
-      <p>Welcome to the official website</p>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="logo">
+        <img src="assets/profile.jpg" alt="Meher" class="logo-img" />
+      </div>
+      <div class="brand">
+        <h1>Growup with Meher</h1>
+        <p class="sub">Safe trading guidance • Learn • Grow</p>
+      </div>
+      <nav class="top-cta">
+        <a class="btn cta" href="https://wa.me/916289484723" target="_blank" rel="noopener">WhatsApp Now</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Intro Video -->
-  <section class="video-section">
-    <video autoplay muted loop playsinline>
-      <source src="assets/intro.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </section>
+  <main>
+    <!-- Video hero -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="video-wrap">
+          <video id="introVideo" controls playsinline>
+            <source src="assets/intro.mp4" type="video/mp4" />
+            Your browser does not support video.
+          </video>
+        </div>
 
-  <!-- Description Below Video -->
-  <section class="description">
-    <p>
-      I helped all people who worked with me! And tomorrow my new client will be looking at YOUR balance as an example of our successful work! 💕
-    </p>
-  </section>
+        <!-- CTA shown right under video (visible always) -->
+        <div class="video-cta">
+          <a id="videoWhatsappBtn" class="btn" href="https://wa.me/916289484723" target="_blank" rel="noopener">WhatsApp Now</a>
+          <a class="btn ghost" href="#contact">Contact / Form</a>
+        </div>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/916289484723" class="whatsapp-float" target="_blank">
-    <img src="assets/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
-  </a>
+        <p class="lead">
+          I helped all people who worked with me! Aur kal mera naya client aapke
+          balance ko hamare successful work ka example samjhega. 💕
+        </p>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Growup with Meher. All rights reserved.</p>
+    <!-- Services / Trust signals -->
+    <section class="trust wrap">
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Secure</h3>
+          <p>Data secure & transparent process.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Verified</h3>
+          <p>Client success stories & reviews.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Support</h3>
+          <p>WhatsApp support available 24/7.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews wrap">
+      <h2>Client Reviews</h2>
+      <div class="review-grid">
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>"Meher ne mujhe sahi start karaaya — transparent aur helpful."</p>
+          <strong>- R. Sharma</strong>
+        </div>
+        <div class="review">
+          <div class="stars">★★★★☆</div>
+          <p>"Quick support and clear guidance." </p>
+          <strong>- P. Mehta</strong>
+        </div>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>"Results in few weeks — recommended."</p>
+          <strong>- S. Khan</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact form -->
+    <section id="contact" class="contact wrap">
+      <h2>Contact / Apply</h2>
+      <!-- using formsubmit to deliver to your email -->
+      <form class="contact-form" action="https://formsubmit.co/mehergill1986@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="tel" name="phone" placeholder="Phone number" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" placeholder="Short message" rows="4"></textarea>
+
+        <!-- redirect to thankyou page -->
+        <input type="hidden" name="_next" value="thankyou.html" />
+        <input type="hidden" name="_autoresponse" value="Thank you! We've received your message. We'll contact you soon." />
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta wrap">
+      <h2>Ready to start?</h2>
+      <div class="final-actions">
+        <a class="btn invest" href="#contact">Invest Now</a>
+        <a class="btn" href="https://wa.me/916289484723" target="_blank" rel="noopener">WhatsApp Now</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <div id="whatsappFloating" class="whatsapp-floating">
+    <a href="https://wa.me/916289484723" target="_blank" rel="noopener">
+      <img src="assets/whatsapp.png" alt="WhatsApp" />
+    </a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-left">
+        <p>© 2025 Growup with Meher</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+      </div>
+      <div class="footer-right social">
+        <a href="https://wa.me/916289484723" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
   </footer>
+
+  <!-- small script: show a short CTA banner when video ends -->
+  <script>
+    (function () {
+      const video = document.getElementById('introVideo');
+      const videoBtn = document.getElementById('videoWhatsappBtn');
+
+      // If video ends, highlight whatsapp button and show a quick banner
+      if (video) {
+        video.addEventListener('ended', () => {
+          // brief flash (CSS class toggle)
+          videoBtn.classList.add('pulse');
+          setTimeout(() => videoBtn.classList.remove('pulse'), 2500);
+          // also open whatsapp in new tab if desired - disabled by default
+          // window.open('https://wa.me/916289484723', '_blank');
+        });
+      }
+
+      // Optional: show floating button after some seconds
+      setTimeout(() => {
+        const float = document.getElementById('whatsappFloating');
+        if (float) float.classList.add('visible');
+      }, 1200);
+    })();
+  </script>
 </body>
 </html>
